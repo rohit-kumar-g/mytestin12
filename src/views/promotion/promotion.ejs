@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.24px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>lottery</title>
+    <link href="/css/promotion/app.css" rel="stylesheet" />
+    <link href="/css/checkIn/app.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_1.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_2.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_3.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_4.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_5.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_6.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <style>
+        
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #9195a3;
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            height: 130px;
+        }
+
+        .navbar[data-v-106b99c8] {
+            width: 100%;
+            max-width: 10.66667rem;
+            top: 0;
+            height: 1.33333rem;
+            line-height: 1.33333rem;
+            background: rgb(247, 248, 255);
+            box-shadow: inset 0rem 0rem 1rem 0rem #65006100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            color: #333;
+            z-index: 999;
+        }
+        .mian[data-v-7c8bbbf4] {
+            padding-bottom: 1.86667rem;
+           
+        }
+        #app {
+             background: white;
+        }
+       
+        .mian .promotion .info-data .left[data-v-7c8bbbf4] {
+            text-align: center;
+            padding: 0.26667rem 0;
+            width: 40%;
+            background: rgba(223, 56, 50, .02);
+            border: 0.04rem solid #000000;
+            border-radius: 0.26667rem;
+            background-image: linear-gradient(90deg, #e3e3e3, #d9d9d9);
+            box-shadow: inset 0rem 0rem 1rem 0rem #ffb0fc;
+        }
+
+        .mian .promotion .info-data .right[data-v-7c8bbbf4] {
+            width: 50%;
+            padding: 0.26667rem 0 0.26667rem 0.26667rem;
+            background-image: linear-gradient(90deg, #e3e3e3, #d9d9d9);
+            box-shadow: inset 0rem 0rem 1rem 0rem #ffb0fc;
+            border-radius: 0.26667rem;
+        }
+
+        .container[data-v-d18c566e] {
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            height: 7.7rem;
+            color: #fff;
+            background-color: #f95959;
+            padding-top: 1.6rem;
+            background-image: url(/assets/png/promotionbg-9dcd78e9.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 50px;
+        }
+
+        .container .amount[data-v-d18c566e] {
+            font-weight: 500;
+            font-size: .64rem;
+            line-height: .64rem;
+            color: #fff;
+            margin-bottom: 0.21333rem;
+        }
+
+        .container .amount_txt[data-v-d18c566e] {
+            height: .64rem;
+            min-width: 3.41333rem;
+            background: #ff8d8d;
+            border-radius: .66667rem;
+            line-height: .64rem;
+            text-align: center;
+            font-size: .34667rem;
+            margin-bottom: .13333rem;
+            white-space: nowrap;
+            padding: 0 .33333rem;
+        }
+
+        .container .tip[data-v-d18c566e] {
+            font-size: .29333rem;
+            margin-bottom: 0.26667rem;
+        }
+
+        .container .info_content[data-v-d18c566e] {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            width: 9.33333rem;
+            min-height: 5.06667rem;
+            background-color: #fff;
+            border-radius: .26667rem;
+            overflow: hidden;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 0.10667rem 0.21333rem #d0d0ed5c;
+        }
+
+        .container .info_content .info[data-v-d18c566e] {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            padding-bottom: 0.2rem;
+        }
+
+        .container .info_content .info .head[data-v-d18c566e] {
+            eight: 1.06667rem;
+            line-height: 1.06667rem;
+            background-color: #f6f6f6;
+            color: #151515;
+            font-size: .34667rem;
+            padding-left: 1.01333rem;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANSSURBVHgB7ZhPSxtBFMDf7Ca7iVJYsJf20ObQ9lSpbT9Ak0tBEAwtQhSx4CfwG6jfoP0C1oJgQApKBY96ak+tQnuyhe6pPbUkjXbNrjvT97aJJHH/ZFZiVPYHYWfzZnffm/fmzZsBSEhIuNQwOAPO9HReuO64ACjiba7xwj1gbM/lfDFbLpvQY2IZIIpFw8lm51HxudCXK8rL9OHhIltfr/i+Z2ZmyHXdMZXz/W+Vyqe7W1t1kEQBSRrKb0cp7/XlfM7ri8/4yf/ats6F0B3Ghm8ZxtjX0VEdJJE2oDHyI932p77O4OC8n2ywXP6RzmRWBWMHjLGhO4bxCCSRCiGrVMopjH2HGHBVLWRXVnb8ZGJ29ppzdPQcm5rD+SYZBl0i5QFFUeYhJqrrFoNkbGmphpfPXruRDLrWSaYzkwidTjCUxsPkOPI/6aqlUrdBAikDhBCxDYCIkW2GDef8GkggPYkvGnIeADAhLri4hYn/TE5ep6sixC+QQNYDGxATb4UOIauq9+kqVLV3BuAcWIeYUGkR+F5Mo7jo3aN2StM+ggRSBmBts4Nh9AokoWeC6iJS3rXtMWofc/6lkVK7RnoS67q+wCLiuRUKHd2yFvxkXi1Urz+jzIMe+J2tVqVGn5A2gC0vV9KaVujGE9QnbVmFoGKuWQvRyGvV6jsWo5g7UzlNpQVmlwWVsQcta4SJim/QfKGQg4SEhIQrTWQabZ48YDOP6dHAtGlgTWGAPCajYpAxEzf7b9IBu7NWaJWOWpkDDaAcj/n9NSqdh95g4iJWCCoxvO8rylPcBdZUTdsMMsR3JT6YmhrBB3d7qDxB++tdG7/lJ8xoWo02+1Rm0H65WW53csoD3sYdlY8ZJnGooCce+nlCTExox6nUYzRkGG9tPMF42+mJUx7AUdk+R+UJg0LVT8DW1uz06uoHV1H28VarW1a+s0+bAU6pRB1ycM5QqFqYLILkmXr9PV5sHNwbh6XSzVZZmwFcUV5Anwg9dkFPQMCxS5sBTIgc9AmM8ydh8pNjF/RC6//tHuhD+JwQMe8GBgb+T15V1Vr/b/dAPw2gRTKMWs3b7GBabTsAvkjnQqEGNOYBEeyBy0hiQL+5cgaY0D/MqA5U3NEPEhISrg7/AJ5CT0AKw31WAAAAAElFTkSuQmCC);
+            background-size: .64rem;
+            margin-bottom: .2rem;
+            background-repeat: no-repeat;
+            background-position: .26667rem center;
+        
+        }
+
+        .container .info_content .info .line1[data-v-d18c566e],
+        .container .info_content .info .line2[data-v-d18c566e],
+        .container .info_content .info .line3[data-v-d18c566e] {
+            color: #888;
+            font-size: .29333rem;
+            text-align: center;
+            border-right: .01333rem solid #E8E8E8;
+            padding-top: .2rem;
+        }
+
+        .container .info_content .info .head.u2[data-v-d18c566e] {
+            border-left: .02667rem solid #fff;
+           
+}
+        
+
+        .content .shareBtnContainer[data-v-e38e8baa] {
+            margin: 0.48rem 0 0.34667rem;
+            width: 100%;
+            height: 0.93333rem;
+            text-align: center;
+        }
+
+        .content .shareBtnContainer .shareBtn[data-v-e38e8baa] {
+            width: 8.8rem;
+            height: 100%;
+            color: #fff;
+            font-size: .4rem;
+            font-weight: 700;
+            letter-spacing: .01333rem;
+            text-shadow: 0 .05333rem .02667rem rgba(231,65,65,.5);
+            border: none;
+            border-radius: 99rem;
+            background: linear-gradient(180deg,#ff867a 0%,#f95959 100%);
+            box-shadow: 0 0.05333rem #e74141;
+            line-height: 40px;
+        }.mian .promotion .info-img .img[data-v-7c8bbbf4]{
+            width: 35%;
+        }
+       .navbar__content-right img {
+            width: .64rem;
+            height: .64rem;
+        }
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <div id="app">
+        <div data-v-7c8bbbf4="" class="mian">
+            <div data-v-106b99c8="" data-v-7c8bbbf4="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left"></div>
+                <div data-v-106b99c8="" class="navbar-title"> Agency</div>
+                <div data-v-81ead1cb="" class="navbar__content-right" onclick="location.href='/promotion/bonusrecord'" ><img data-v-932703ba="" style="margin-top: 20px;  margin-right: 10px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAWlBMVEX/WmYAAAD/WWf/Wmf/WmX/WGj/WGj/WWf/WGX/WWf/WGf/Wmf/W2b/V2X/W2n/WWj/WWX/WGf/WGf/WWP/XmX/U2z/WGj/XGb/W2j/WWf/Wmb/V2f/Wmb/WWdvLvmAAAAAHXRSTlNmALKfM0Ag32BZUS5GJl85H79wTSYNgBlM7++QgAa8nloAAAEfSURBVEjHzdNZcoMwEEXRfhEIJATYBIIzsP9tJnawGiQKNUm5yvf7HWYIB/sb0OcprKj2AO+592EHTFudgJZuWVcLwSvdM7UQcNlRQG3ipgsADS3TDPINUAIjrSoZoIv2X9fj0LqKAd6CfQegpyDHIBAfFsDYhMB4wII/i5riVgDK7zWAjJIAxQzmfQLwo1LR84lBXy/eRhcdPwZEGYNSBCg7CuiZgQVaGajm/2D+cdSLT22B+VWfNTDc9tMitQFGQH8qi58uImBwLyeSXBLZAdd0Q3ER+C3XuroQiQD3eMA3zKkUUFOQ+i8wskuyHjgS5TyoZKD2AI1kb8DgJDsBA7TpfYYlQJbat1gD9GZv3mgw8MTZ7bVx1QAGsp4ZfAM0fzA9owuXkgAAAABJRU5ErkJggg==" alt=""></div>
+            </div>
+            <div data-v-d18c566e="" data-v-e38e8baa="" class="container"
+                style="--0a9b6058: 'Roboto', 'Inter', sans-serif;">
+
+                <div data-v-d18c566e="" class="amount">0</div>
+                <div data-v-d18c566e="" class="amount_txt">Yesterday's total commission</div>
+                <div data-v-d18c566e="" class="tip">Upgrade the level to increase commission income</div>
+                <div data-v-d18c566e="" class="info_content">
+                    <div data-v-d18c566e="" class="info">
+                        <div data-v-d18c566e="" class="head">Direct subcordinates</div>
+                    
+                        
+                        <div data-v-d18c566e="" class="line1">
+                            <div data-v-d18c566e="" class="">Direct subcordinates </div>
+                            <p data-v-7c8bbbf4="" class="num" id="total_sub1"> 0</p>
+                           
+                        </div>
+                        <div data-v-d18c566e="" class="line1">
+                            <div data-v-d18c566e="" class="">Direct subcordinates Today </div>
+                            <p data-v-7c8bbbf4="" class="num" id="total_sub11"> 0</p>
+                           
+                        </div>
+                        
+                        <div data-v-d18c566e="" class="line3">
+                            <p data-v-7c8bbbf4="" class="txt" id="today_rech">Direct member Recharge commision:  0</p>
+                        </div>
+                        <!-- <div data-v-d18c566e="" class="line1">
+                            <div data-v-d18c566e="">0</div> Number of people making first deposit
+                        </div> -->
+                    </div>
+                    <div data-v-d18c566e="" class="info">
+                        <div data-v-d18c566e="" class="head u2">Team subcordinates</div>
+                       
+                        <div data-v-d18c566e="" class="line1">
+                            <div data-v-d18c566e="" class="">Total Team Members</div>
+                            <p data-v-7c8bbbf4="" class="num" id="total_sub"> 0</p>
+                           
+                        </div>
+                        <div data-v-d18c566e="" class="line1">
+                           
+                        </div>
+                        <div data-v-d18c566e="" class="line2">
+                            <p data-v-7c8bbbf4="" class="txt" roses_f style="font-size: 0.28rem;">Team
+                                Betting
+                                Commision:<br><span data-v-7c8bbbf4="" class="num" id="today_with">0</span>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div data-v-e38e8baa="" class="content" style="--0a9b6058: 'Roboto', 'Inter', sans-serif;">
+            <div data-v-7c8bbbf4="" class="btn-list c-row c-row-middle-center">
+                <div data-v-e38e8baa="" class="shareBtnContainer"><div data-v-7c8bbbf4="" class="btn-box">
+                    <div data-v-7c8bbbf4="" class="btn m-b-10 c-row c-row-middle-center tag-read"
+                        data-clipboard-text=""><button data-v-e38e8baa="" class="shareBtn">Copy Referral Code</button></div>
+                    <div data-v-7c8bbbf4="" data-clipboard-text=""
+                        class="btn m-b-10 c-row c-row-middle-center tag-read"><button data-v-e38e8baa="" class="shareBtn">Copy Link</button></div>
+                </div></div>
+            </div></div>
+            <div data-v-7c8bbbf4="" class="promotion" >
+                <div data-v-7c8bbbf4="" class="tab">
+                    <ul data-v-7c8bbbf4="" class="c-row c-row-between">
+                        <li data-v-7c8bbbf4="" onclick="location.href='/promotion'" class="action block-click">
+                            Overview
+                        </li>
+                        <li data-v-7c8bbbf4="" onclick="location.href='/promotion/myTeam'">My Team</li>
+                        <li data-v-7c8bbbf4="" onclick="location.href='/promotion/tutorial'">Tutorial</li>
+                    </ul>
+                </div>
+                <div data-v-7c8bbbf4="" class="box">
+                    <!-- <div data-v-7c8bbbf4="" class="tit"</div>
+                    <div data-v-7c8bbbf4="" class="info">
+                        <div data-v-7c8bbbf4="" class="info-data c-row c-row-between m-b-20"> -->
+                            <!-- <div data-v-7c8bbbf4="" class="left">
+                                <h5 data-v-7c8bbbf4="" class="all" style="
+                                font-size: 0.5rem;
+                                color: black;
+                                font-weight: bold;
+                            ">My Total Reffers </h5>
+                                <p data-v-7c8bbbf4="" class="num" id="total_sub">0</p>
+                               
+                                <p data-v-7c8bbbf4="" class="txt" id="today_rech">Team deposit commision : 0</p>
+                            </div> -->
+                            <!-- <div data-v-7c8bbbf4="" class="right" style="height: 60%;">
+                                <p data-v-7c8bbbf4="" class="txt">Total commission for the week:<span data-v-7c8bbbf4=""
+                                        class="num">0</span></p>  
+                                <br>
+                                <br>
+                                <p data-v-7c8bbbf4="" class="txt" roses_f style="font-size: 0.369rem;">Team
+                                    Betting
+                                    Commision:<br><span data-v-7c8bbbf4="" class="num" id="today_with">0</span>
+                                </p>
+                            </div> 
+                         </div> -->
+                        <!-- <div data-v-7c8bbbf4="" class="info-img c-row c-row-between">
+                            <div data-v-7c8bbbf4="" class="img">
+                                <div data-v-7c8bbbf4="" id="qrcode" title="">
+                                    <canvas width="145" height="145" style="display: none;"></canvas>
+                                </div>
+                                <div data-v-7c8bbbf4="" class="c-tc">Long press to save QR code</div>
+                            </div> -->
+                            <!-- <div data-v-7c8bbbf4="" class="btn-list c-row c-row-middle-center">
+                                <div data-v-7c8bbbf4="" class="btn-box">
+                                    <div data-v-7c8bbbf4="" class="btn m-b-10 c-row c-row-middle-center tag-read"
+                                        data-clipboard-text="">Copy Referral Code</div>
+                                    <div data-v-7c8bbbf4="" data-clipboard-text=""
+                                        class="btn m-b-10 c-row c-row-middle-center tag-read">Copy Link</div>
+                                </div>
+                            </div> -->
+                        <!-- </div>
+                    </div> -->
+                </div>
+            </div>
+            <!---->
+            <%- include('../nav') -%>
+            <div class="van-overlay" style="z-index: 2003; display: none;">
+                <div data-v-7692a079="" data-v-42f27458="" class="Loading c-row c-row-middle-center"
+                    style="position: fixed;height: 100vh;width: 100vw;top: 0;left: 0;background: rgba(0,0,0,.6);z-index: 99999;">
+                    <div data-v-7692a079="" class="van-loading van-loading--circular">
+                        <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
+                            style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet"
+                                style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                                <defs>
+                                    <clipPath id="__lottie_element_2">
+                                        <rect width="200" height="200" x="0" y="0"></rect>
+                                    </clipPath>
+                                    <image
+                                        xlink:href="data:image/png;base64,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">
+                                    </image>
+                                    <image
+                                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAHlBMVEVHcEy/GyDCGiHCGiDBGiHBGiLBGiG/GyC/HCDBGiEYgX5lAAAACXRSTlMAFupex4emMEAHMN8rAAAEw0lEQVR42u1cy1ITQRTtYTKZsAsQLLODUsDeoVWC2YGSSHYC8ZEdolU6Owopq9gpisJOhwS5f2vPDENek2QefW5ZyF0BReZM9z3nPjrdLURimxJwM+p0Dw5SIqJl9ECaCmQO93z7pLFBvv1BjeDkPV3bJQbicZ267DcC4ySAcGsvT3+W1Q+7+iHMPR+huhr8RtQqasf4IRVEa+f6wbM17Qw2tr1RvCsiZVFwFMbCPlR6pvK4+xorb1O542IZj7FQxGIUFAY64Np1PIYXbuGJ4xEDhspNbbDPPWK10BiGQy46x4pjoi00hsXgdFX1XKAdIg7wRY/HrCV4+VbBs1fkIYVCnzl0LvADwctQ0Rfv9RK5+wweWWfwCJ6+aiDzcAyLwyMVBmrZHAOZZhC7EuIyA38vBIPb8UK0pYsXYonB7aJJL+AYBWoJBpEsccwWXiQ2x2zlMCsm/UrEc8uQLn4gFmgRq8fKtIYHcQgftwyOKJ/nIHCZgcDCcW+ISywOl0wzNFcqcOGLOlFnCPM2RwmRR35ZEdoEhxRZ/O4wJCyDw+8mh97zHFmRhVxHHORqMpBL1BmSieBgcIGDwRZHeMxzpEUWmZTpCx7kjKEM5tGi0+IQfJsBRDIIXnA0cjZsX0UPyC+O+MgAYnJk+JsDYnFEeosj0t+CxLXDIh7EkGt4kCCg3IL8SyCmX5+CY5flP/4mgUCL+pwf5ME5Pufzysb2QBPBNybYumsy6BmwLWM56N+xtfAZBVU9tMO+akya0NbhqjGpEENjcgTtGa9oNYn87i/sGXLI6s68iicWMkKGC3bQtZVwJQK6zlkOHY6UfCVciUCuFlwvElSA6x6y3T9vCJlcXtMMJpTOgh1whbsjdOB3NF2ewK3ZNjucwtFLXkQNSje5zruiGKi+636wiaqKprs7BgnyfI+zmyDPy1YPnSGNUKFHgHnM9sdcD6EKGM2f9U5QHZJS+vYrVBByNKjdl+/nEFKc7yuPzuEu8ZyiXykDzzzTrxST2gOU1p4dJwbEZ+vfuRKxiU/7vj5DtiKi8rxuAl/GcFPmMB9RaNX1NlxG5HZazfOVj5S3pXe+KtFlqdbN1caQzcda5ys3JBiaOnenDt187Oir7s2hZyY07q8+GLr52Ja6tn0YcjiJtB11KI2Qg6Xr9MlI72o6RzP6qExOD4ubIxVn1HWw2BxzwqSkI0GO449i8W72gYwLggfZh1IZq2k1lPWs1BofzQ+yaiXOAb+sh+finYtT/5Uh2dvx3lENJUMwPqbWfkzPvc1A3/W4HIz3NhGz4MRWQEGmPVt8nOAw72HKCbOIHiQJo2kOmipmJdGYKdMclG4mPPl8J8WRb+WQ58k+8YhoM9kn1Hu1k5MxmfNnZQrie7dIbCXyYhquqFdztxJgpGO9muS4KDMysQs78ZjoQ8xBp8UQ4rtCeTZeLyuU6Y6Dz+rji2M4498tsykymDcRo291+eTd9PMxW1kw4z1jcSg5Cw2iBCQcGvW82aBqZEa2V7ybfrTcLeM/iapPBiaq4V+JpOmmH3M7uGCp+uZr+Ke7314Fty4tPtTWZs7shddE3d9Q9jT8bXFV60rJTIMGrKYXwtfDSUN2ANzazr7AmDF16ttUUfyf9hdhzrd5F3WCHQAAAABJRU5ErkJggg==">
+                                    </image>
+                                </defs>
+                                <g clip-path="url(#__lottie_element_2)">
+                                    <g class="ai"
+                                        transform="matrix(0.9999210238456726,0.012566040270030499,-0.012566040270030499,0.9999210238456726,1.264495849609375,-1.2487106323242188)"
+                                        opacity="1" style="display: block;">
+                                        <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAHlBMVEVHcEy/GyDCGiHCGiDBGiHBGiLBGiG/GyC/HCDBGiEYgX5lAAAACXRSTlMAFupex4emMEAHMN8rAAAEw0lEQVR42u1cy1ITQRTtYTKZsAsQLLODUsDeoVWC2YGSSHYC8ZEdolU6Owopq9gpisJOhwS5f2vPDENek2QefW5ZyF0BReZM9z3nPjrdLURimxJwM+p0Dw5SIqJl9ECaCmQO93z7pLFBvv1BjeDkPV3bJQbicZ267DcC4ySAcGsvT3+W1Q+7+iHMPR+huhr8RtQqasf4IRVEa+f6wbM17Qw2tr1RvCsiZVFwFMbCPlR6pvK4+xorb1O542IZj7FQxGIUFAY64Np1PIYXbuGJ4xEDhspNbbDPPWK10BiGQy46x4pjoi00hsXgdFX1XKAdIg7wRY/HrCV4+VbBs1fkIYVCnzl0LvADwctQ0Rfv9RK5+wweWWfwCJ6+aiDzcAyLwyMVBmrZHAOZZhC7EuIyA38vBIPb8UK0pYsXYonB7aJJL+AYBWoJBpEsccwWXiQ2x2zlMCsm/UrEc8uQLn4gFmgRq8fKtIYHcQgftwyOKJ/nIHCZgcDCcW+ISywOl0wzNFcqcOGLOlFnCPM2RwmRR35ZEdoEhxRZ/O4wJCyDw+8mh97zHFmRhVxHHORqMpBL1BmSieBgcIGDwRZHeMxzpEUWmZTpCx7kjKEM5tGi0+IQfJsBRDIIXnA0cjZsX0UPyC+O+MgAYnJk+JsDYnFEeosj0t+CxLXDIh7EkGt4kCCg3IL8SyCmX5+CY5flP/4mgUCL+pwf5ME5Pufzysb2QBPBNybYumsy6BmwLWM56N+xtfAZBVU9tMO+akya0NbhqjGpEENjcgTtGa9oNYn87i/sGXLI6s68iicWMkKGC3bQtZVwJQK6zlkOHY6UfCVciUCuFlwvElSA6x6y3T9vCJlcXtMMJpTOgh1whbsjdOB3NF2ewK3ZNjucwtFLXkQNSje5zruiGKi+636wiaqKprs7BgnyfI+zmyDPy1YPnSGNUKFHgHnM9sdcD6EKGM2f9U5QHZJS+vYrVBByNKjdl+/nEFKc7yuPzuEu8ZyiXykDzzzTrxST2gOU1p4dJwbEZ+vfuRKxiU/7vj5DtiKi8rxuAl/GcFPmMB9RaNX1NlxG5HZazfOVj5S3pXe+KtFlqdbN1caQzcda5ys3JBiaOnenDt187Oir7s2hZyY07q8+GLr52Ja6tn0YcjiJtB11KI2Qg6Xr9MlI72o6RzP6qExOD4ubIxVn1HWw2BxzwqSkI0GO449i8W72gYwLggfZh1IZq2k1lPWs1BofzQ+yaiXOAb+sh+finYtT/5Uh2dvx3lENJUMwPqbWfkzPvc1A3/W4HIz3NhGz4MRWQEGmPVt8nOAw72HKCbOIHiQJo2kOmipmJdGYKdMclG4mPPl8J8WRb+WQ58k+8YhoM9kn1Hu1k5MxmfNnZQrie7dIbCXyYhquqFdztxJgpGO9muS4KDMysQs78ZjoQ8xBp8UQ4rtCeTZeLyuU6Y6Dz+rji2M4498tsykymDcRo291+eTd9PMxW1kw4z1jcSg5Cw2iBCQcGvW82aBqZEa2V7ybfrTcLeM/iapPBiaq4V+JpOmmH3M7uGCp+uZr+Ke7314Fty4tPtTWZs7shddE3d9Q9jT8bXFV60rJTIMGrKYXwtfDSUN2ANzazr7AmDF16ttUUfyf9hdhzrd5F3WCHQAAAABJRU5ErkJggg==">
+                                        </image>
+                                    </g>
+                                    <g class="png"
+                                        transform="matrix(0.8008000254631042,0,0,0.8008000254631042,59.959999084472656,59.959999084472656)"
+                                        opacity="1" style="display: block;">
+                                        <image width="100px" height="100px" preserveAspectRatio="xMidYMid slice"
+                                            xlink:href="data:image/png;base64,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">
+                                        </image>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        <div data-v-1690b988="" class="skeleton-wrapper" style="display: none;">
+                            <div data-v-1690b988="" class="van-skeleton van-skeleton--animate"><!---->
+                                <div class="van-skeleton__content"><!---->
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+                                <div class="van-skeleton-avatar van-skeleton-avatar--round"></div>
+                                <div class="van-skeleton__content">
+                                    <h3 class="van-skeleton-title"></h3>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div data-v-1690b988="" class="van-skeleton van-skeleton--animate"><!---->
+                                <div class="van-skeleton__content">
+                                    <h3 class="van-skeleton-title"></h3>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                                    <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@master/qrcode.js"></script>
+    <script src="/js/client.js"></script>
+    <script>
+        $(document).ready(function() {
+            function alertMess(text, sic) {
+                $('body').append(
+                    `
+     <div data-v-1dcba851="" class="msg">
+     <div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
+     </div>
+     `
+                );
+                setTimeout(() => {
+                    $('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+                    $('.msg .msg-content').addClass('v-leave-active v-leave-to');
+                    setTimeout(() => {
+                        $('.msg').remove();
+                    }, 100);
+                    sic.removeClass('block-click');
+                }, 1000);
+            }
+            $('.btn-box .btn').click(function (e) {
+                e.preventDefault();
+                $(this).addClass('block-click');
+                alertMess('Copy successful', $(this));
+                navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
+            });
+        });
+     </script>
+<script>
+    function RosesRender(datas) {
+        let html = datas.map((e) => {
+            let html = '';
+            return html += `<div data-v-7c8bbbf4="" class="bd van-row">
+                    <div data-v-7c8bbbf4="" class="c-tc van-ellipsis van-col van-col--6">Level ${e.level}</div>
+                    <div data-v-7c8bbbf4="" class="c-tc van-col van-col--4">${e.f1}%</div>
+                    <div data-v-7c8bbbf4="" class="c-tc van-col van-col--4">${e.f2}%</div>
+                    <div data-v-7c8bbbf4="" class="c-tc van-col van-col--5">${e.f3}%</div>
+                    <div data-v-7c8bbbf4="" class="c-tc van-col van-col--5">${e.f4}%</div>
+                </div>`;
+        });
+        $('.table:eq(1) .box').append(html);
+ 
+        $('.table:eq(1) .box').append(`
+            <div data-v-7c8bbbf4="" class="bd van-row">
+                <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--6">...</div>
+                <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--4">...</div>
+                <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--4">...</div>
+                <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--5">...</div>
+                <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--5">...</div>
+            </div>
+            `);
+    }
+   $.ajax({
+       type: "POST",
+       url: "/api/webapi/promotion",
+       data: {
+
+       },
+       dataType: "json",
+       success: function (response) {
+           $('.Loading').fadeOut(0);
+           $('#total_sub1').text(response.invite.f1);
+           $('#total_sub11').text(response.invite.f1_today);
+           $('#total_sub').text(response.invite.total_f);
+
+
+           
+           $('#today_sub').text(response.invite.roses_today);
+           $('#total_with').text((3/1)* response.invite.roses_all + response.invite.roses_all);
+           $('#today_with').text( response.invite.roses_f);
+
+           $('#total_rech').text("Direct member total recharge: " + response.invite.roses_all);
+           $('#today_rech').text("Direct member Recharge commission: " + response.invite.bonus);
+   
+
+           if (response.status === false) return location.href = '/home';
+           RosesRender(response.level);
+           $('.btn-box .btn:eq(0)').attr('data-clipboard-text', response.info[0].code);
+                 $('.btn-box .btn:eq(1)').attr('data-clipboard-text', window.location.hostname + `/register?r_code=${response.info[0].code} `);
+                 var qrcode = new QRCode("qrcode");
+                 $('#qrcode').attr('title', window.location.hostname + `/register?r_code=${response.info[0].code}`)
+                 function makeCode() {
+                     qrcode.makeCode(window.location.hostname + `/register?r_code=${response.info[0].code}`);
+                 }
+
+                 makeCode();
+             }
+         });
+     </script>
+     <!-- <script>
+        function RosesRender(datas) {
+          let html = datas.map((e) => {
+            let html = "";
+            return (html += `<div data-v-7c8bbbf4="" class="bd van-row">
+                          <div data-v-7c8bbbf4="" class="c-tc van-ellipsis van-col van-col--6">Level ${e.level}</div>
+                          <div data-v-7c8bbbf4="" class="c-tc van-col van-col--04">${e.f1}%</div>
+                          <div data-v-7c8bbbf4="" class="c-tc van-col van-col--04">${e.f2}%</div>
+                         
+                      </div>`);
+          });
+          $(".table:eq(1) .box").append(html);
+  
+          $(".table:eq(1) .box").append(`
+                  <div data-v-7c8bbbf4="" class="bd van-row">
+                      <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--6">...</div>
+                      <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--04">...</div>
+                      <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--04">...</div>
+                      
+                  </div>
+                  `);
+        }
+        $.ajax({
+          type: "POST",
+          url: "/api/webapi/promotion",
+          data: {},
+          dataType: "json",
+          success: function (response) {
+            $(".Loading").fadeOut(0);
+            $("#f1").text(response.invite.f1);
+            $("#f1_today").text(response.invite.f1_today);
+            $("#f_all_today").text(response.invite.f_all_today);
+            $("#f_total").text(response.invite.total_f);
+  
+            $("#roses_f1").text("Agent Promotion: " + response.invite.roses_f1);
+            $("#roses_f").text("Team bonus: " + response.invite.roses_f);
+            $("#roses_all").text(response.invite.roses_all);
+            $("#roses_today").text(response.invite.roses_today);
+  
+            if (response.status === false) return (location.href = "/home");
+            RosesRender(response.level);
+            $(".btn-box .btn:eq(0)").attr(
+              "data-clipboard-text",
+              response.info[0].code
+            );
+            $(".btn-box .btn:eq(1)").attr(
+              "data-clipboard-text",
+              window.location.hostname +
+                `/register?r_code=${response.info[0].code}`
+            );
+            var qrcode = new QRCode("qrcode");
+            $("#qrcode").attr(
+              "title",
+              window.location.hostname +
+                `/register?r_code=${response.info[0].code}`
+            );
+            function makeCode() {
+              qrcode.makeCode(
+                window.location.hostname +
+                  `/register?r_code=${response.info[0].code}`
+              );
+            }
+  
+            makeCode();
+          },
+        });
+      </script> -->
+     <!-- <script>
+         var limit = 15;
+         var start = 0;
+         var action = 'inactive';
+         function load_country_data(limit, start) {
+             $.ajax({
+                 url: "http://localhost:8000/api/webapi/promotion",
+                 method: "POST",
+                 data: {
+                     limit: limit,
+                     start: start
+                 },
+                 cache: false,
+                 success: function(data) {
+                     if (period == '') {
+                         $('.van-list__finished-text').text("No more data");
+                         action = 'active';
+                     } else {
+                         $('.van-list__finished-text').html('<div data-v-7d40872f="" class="order-content"><div role="feed" class="van-list" aria-busy ="true"><div class="van-list__loading"><div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="width : 16px; height: 16px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"> </circle></svg></span><span class="van-loading__text">Loading...</span></div></div><div class="van-list__placeholder">< /div></div></div>');
+                         action = "inactive";
+                     }
+                 }
+             });
+         }
+         if (action == 'inactive') {
+             action = 'active';
+             load_country_data(limit, start);
+         }
+         $(window).scroll(function() {
+             if ($(window).scrollTop() + $(window).height() > $(".main").height() && action == 'inactive') {
+                 action = 'active';
+                 start = start + limit;
+                 setTimeout(function() {
+                     load_country_data(limit, start);
+                 }, 1200);
+             }
+         });
+     </script> -->
+     <script>
+        $(document).ready(function () {
+            // Select the overlay element
+            $('.van-overlay').fadeIn(10);
+        });
+        $(window).on('load', function () {
+            // Select the overlay element
+            $('.van-overlay').fadeIn(10);
+            setTimeout(function () {
+                $('.van-overlay').fadeOut(300);
+            }, 600);
+        });
+    </script>
+</body>
+
+</html>

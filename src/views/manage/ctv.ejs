@@ -126,10 +126,10 @@
             <a class="btn btn-primary btn-sm confirm-btn" href="/admin/manager/ctv/profile/${data.phone}">
               <i class="fas fa-folder"></i> Profile
             </a>
-            ${(data.status == 1) ? `<a class="btn btn-info btn-sm btn-danger" id="${data.id}" href="#">
+            ${(data.status == 1) ? `<a class="btn btn-info btn-sm btn-danger" id='${data.id}' href="#">
               <i class="fas fa-pencil-alt"></i> Key
             </a>` : ''}
-            ${(data.status == 2) ? `<a class="btn btn-info btn-sm btn-info1" id="${data.id}" href="#">
+            ${(data.status == 2) ? `<a class="btn btn-info btn-sm btn-info1" id='${data.id}' href="#">
               <i class="fas fa-pencil-alt"></i> Open
             </a>` : ''}
             <!--<a class="btn btn-danger btn-sm delete-btn" href="#">

@@ -619,7 +619,7 @@ function GetMyEmerdList(datas) {
         }
 
         return (htmls += `
-      <div data-v-42f27458="" issuenumber="${data.id_product}" addtime="${timerJoin(data.time)}" rowid="1" class="hb">
+      <div data-v-42f27458="" issuenumber='${data.id_product}' addtime='${timerJoin(data.time)}' rowid="1" class="hb">
           <div data-v-42f27458="" class="item c-row">
               <div data-v-42f27458="" class="c-row c-row-between info">
                   <div data-v-42f27458="">
@@ -632,7 +632,7 @@ function GetMyEmerdList(datas) {
                       <div data-v-42f27458="" class="tiem">${timerJoin(data.time)}</div>
                   </div>
                   <div data-v-42f27458="" class="money" style="display: ${(data.status == 0) ? 'none' : ''}">
-                      <span data-v-42f27458="" class="${(data.status == 1) ? 'success' : 'fail'}"> ${(data.status == 1) ? '+' : '-'} ${(data.status == 1) ? data.get : data.price}.00 </span>
+                      <span data-v-42f27458="" class='${(data.status == 1) ? 'success' : 'fail'}'> ${(data.status == 1) ? '+' : '-'} ${(data.status == 1) ? data.get : data.price}.00 </span>
                       <!---->
                   </div>
               </div>
@@ -643,7 +643,7 @@ function GetMyEmerdList(datas) {
                   <div data-v-42f27458="">Order Number</div>
                   <div data-v-42f27458="" class="tag-read c-row c-row-between c-row-middle">
                       ${data.id_product}
-                      <img data-v-42f27458="" data-clipboard-text="${data.id_product}" width="18px" height="15px" src="/images/copy.png" class="m-l-5 copy-to-img" />
+                      <img data-v-42f27458="" data-clipboard-text='${data.id_product}' width="18px" height="15px" src="/images/copy.png" class="m-l-5 copy-to-img" />
                   </div>
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">
@@ -687,12 +687,12 @@ function GetMyEmerdList(datas) {
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">
                   <div data-v-42f27458="">Status</div>
-                  <div data-v-42f27458="" class="${(data.status == 1) ? 'green' : 'red'}" style="display: ${(data.status == 0) ? 'none' : ''};">${(data.status == 1) ? 'Success' : 'Fail'}</div>
+                  <div data-v-42f27458="" class='${(data.status == 1) ? 'green' : 'red'}' style="display: ${(data.status == 0) ? 'none' : ''};">${(data.status == 1) ? 'Success' : 'Fail'}</div>
                   <!---->
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">
                   <div data-v-42f27458="">Win Or Loss</div>
-                  <div data-v-42f27458="" class="${(data.status == 1) ? 'green' : 'red'}" style="display: ${(data.status == 0) ? 'none' : ''};">${(data.status == 1) ? '+' : '-'} ${(data.status == 1) ? data.get : data.price}.00</div>
+                  <div data-v-42f27458="" class='${(data.status == 1) ? 'green' : 'red'}' style="display: ${(data.status == 0) ? 'none' : ''};">${(data.status == 1) ? '+' : '-'} ${(data.status == 1) ? data.get : data.price}.00</div>
                   <!---->
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">

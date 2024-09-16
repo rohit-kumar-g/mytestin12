@@ -112,7 +112,7 @@ function show(params) {
     // Exclude rows with UTR value of 0
     if (data.utr !== "") {
       html += `<tr class="text-center">
-                <td id="${data.id}">
+                <td id='${data.id}'>
                   ${data.id}
                 </td>
                 <td>
@@ -132,10 +132,10 @@ function show(params) {
                 </td>
                 <td class="project-actions text-center" style="min-width: 160px;">
                   <!-- confirm -->
-                  <a class="btn btn-success btn-sm confirm-btn" href="" data="${data.id}"><i class="fa fa-check"></i></a>
+                  <a class="btn btn-success btn-sm confirm-btn" href="" data='${data.id}'><i class="fa fa-check"></i></a>
                   <span style="margin-right: 20px;"></span>
                   <!-- Delete -->
-                  <a class="btn btn-danger btn-sm delete-btn" href="#" data="${data.id}"><i class="fas fa-trash"></i></a >
+                  <a class="btn btn-danger btn-sm delete-btn" href="#" data='${data.id}'><i class="fas fa-trash"></i></a >
                 </td>
               </tr>`;
     }

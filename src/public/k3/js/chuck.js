@@ -170,7 +170,7 @@ function GetMyEmerdList(list_orders) {
                         </div>
                         <div data-v-03b808c2="" class="money ${(list_order.status == 0) ? 'd-none' : ''}">
                             <!---->
-                            <span data-v-03b808c2="" class="${(list_order.status == 1) ? 'success' : 'fail'}"> ${(list_order.status == 1) ? '+' : '-'}${(list_order.status == 1) ? list_order.get : list_order.price}.00 </span>
+                            <span data-v-03b808c2="" class='${(list_order.status == 1) ? 'success' : 'fail'}'> ${(list_order.status == 1) ? '+' : '-'}${(list_order.status == 1) ? list_order.get : list_order.price}.00 </span>
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@ function GetMyEmerdList(list_orders) {
                   <div data-v-42f27458="">Order Number</div>
                   <div data-v-42f27458="" class="tag-read c-row c-row-between c-row-middle">
                       ${list_order.id_product}
-                      <img data-v-42f27458="" data-clipboard-text="${list_order.id_product}" width="18px" height="15px" src="/images/copy.png" class="m-l-5 copy-to-img" />
+                      <img data-v-42f27458="" data-clipboard-text='${list_order.id_product}' width="18px" height="15px" src="/images/copy.png" class="m-l-5 copy-to-img" />
                   </div>
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">
@@ -224,12 +224,12 @@ function GetMyEmerdList(list_orders) {
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">
                   <div data-v-42f27458="">Status</div>
-                  <div data-v-42f27458="" class="${(list_order.status == 1) ? 'green' : 'red'}" style="display: ${(list_order.status == 0) ? 'none' : ''};">${(list_order.status == 1) ? 'Success' : 'Fail'}</div>
+                  <div data-v-42f27458="" class='${(list_order.status == 1) ? 'green' : 'red'}' style="display: ${(list_order.status == 0) ? 'none' : ''};">${(list_order.status == 1) ? 'Success' : 'Fail'}</div>
                   <!---->
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">
                   <div data-v-42f27458="">Win Or Loss</div>
-                  <div data-v-42f27458="" class="${(list_order.status == 1) ? 'green' : 'red'}" style="display: ${(list_order.status == 0) ? 'none' : ''};">${(list_order.status == 1) ? '+' : '-'} ${(list_order.status == 1) ? list_order.get : list_order.price}.00</div>
+                  <div data-v-42f27458="" class='${(list_order.status == 1) ? 'green' : 'red'}' style="display: ${(list_order.status == 0) ? 'none' : ''};">${(list_order.status == 1) ? '+' : '-'} ${(list_order.status == 1) ? list_order.get : list_order.price}.00</div>
                   <!---->
               </div>
               <div data-v-42f27458="" class="detailLi c-row c-row-between c-row-middle">

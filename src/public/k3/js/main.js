@@ -455,7 +455,7 @@ $(".list-join-total .item").click(function (e) {
     }
     let html = $(this).find('.li').attr('data-join');
     $('.list-join-ao').append(`
-        <li data-v-03b808c2="" value="${html}">
+        <li data-v-03b808c2="" value='${html}'>
             <span data-v-03b808c2="">${html}</span>
         </li>
     `);
@@ -500,7 +500,7 @@ $('.bet-con[game="2"] .purple[data="chon-2-so-phu-hop"] .item').click(function (
 
     $(`.list-join-ao`).removeClass('d-none');
     $(`.list-join-ao`).append(`
-        <li data-v-03b808c2="" class="actionViolet" data="${data}">${data}</li>
+        <li data-v-03b808c2="" class="actionViolet" data='${data}'>${data}</li>
     `);
 
     $(`.list-join-ao span[game=${game}]`).removeClass('d-none');
@@ -528,7 +528,7 @@ function handlingGame2() {
             }
             number = number.slice(0, -1);
             html += `
-                <li data-v-03b808c2="" class="actionRedGreen" data="${numberHang1}">${numberHang1}|${number}</li>
+                <li data-v-03b808c2="" class="actionRedGreen" data='${numberHang1}'>${numberHang1}|${number}</li>
             `;
             numberHang1 = '';
             number = '';
@@ -638,7 +638,7 @@ $('.bet-con[game="3"] .item').click(function (e) {
     $(`.list-join-ao`).removeClass('d-none');
     $(this).addClass('action');
     $(`.Bet-box .list-join-ao`).append(`
-        <li data-v-03b808c2="" class="actionViolet" data="${data}">${data}</li>
+        <li data-v-03b808c2="" class="actionViolet" data='${data}'>${data}</li>
     `);
     $(".pop-total").css("transform", "translateY(0px)");
     totalMoney3();
@@ -708,7 +708,7 @@ $('.bet-con[game="4"] .num-box:eq(0) .item').click(function (e) {
     $(`.Bet-box ul span[game=${game}]`).removeClass('d-none');
     $(this).addClass('action');
     $(`.Bet-box ul.list-join-ao`).append(`
-        <li data-v-03b808c2="" class="actionViolet" data="${data}">${data}</li>
+        <li data-v-03b808c2="" class="actionViolet" data='${data}'>${data}</li>
     `);
     let count = $(`.Bet-box ul.list-join-ao li`).length;
     if (count >= 3) {
@@ -781,7 +781,7 @@ $('.bet-con[game="4"] .num-box:eq(2) .item').click(function (e) {
     $(`.Bet-box ul[game="4"] span`).removeClass('d-none');
     $(this).addClass('action');
     $(`.Bet-box ul[game="4"]`).append(`
-        <li data-v-03b808c2="" class="actionViolet" data="${data}">${data}</li>
+        <li data-v-03b808c2="" class="actionViolet" data='${data}'>${data}</li>
     `);
 
     let count = $(`.Bet-box ul[game="4"] li`).length;

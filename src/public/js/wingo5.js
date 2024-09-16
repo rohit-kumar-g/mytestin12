@@ -778,7 +778,7 @@ function showListOrder3(list_orders, x) {
                         list_orders.stage
                       }" addtime="${timerJoin(
         list_orders.time
-      )}" colour="red" number="6" rowid="${i}" class="hb">
+      )}" colour="red" number="6" rowid='${i}' class="hb">
                           <div data-v-a9660e98="" class="item c-row">
                               <div data-v-a9660e98="" class="result">
                                   <div data-v-a9660e98="" class="select select-${color}">

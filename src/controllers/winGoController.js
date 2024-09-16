@@ -100,7 +100,7 @@ const betWinGo = async (req, res) => {
     if (typeid == 3) gameJoin = 'wingo3';
     if (typeid == 5) gameJoin = 'wingo5';
     if (typeid == 10) gameJoin = 'wingo10';
-    const [winGoNow] = await connection.query("SELECT period FROM wingo WHERE status = 0 AND game = '" + gameJoin +"' ORDER BY id DESC LIMIT 1");
+    const [winGoNow] = await connection.query(`SELECT period FROM wingo WHERE status = 0 AND game = '${gameJoin}' ORDER BY id DESC LIMIT 1 `);
     const [user] = await connection.query('SELECT `phone`, `code`, `invite`, `level`, `money` FROM users WHERE token = ? AND veri = 1  LIMIT 1 ', [auth]);
     if (!winGoNow[0] || !user[0] || !isNumber(x) || !isNumber(money)) {
         return res.status(200).json({
@@ -162,7 +162,7 @@ const betWinGo = async (req, res) => {
 
 
     let result = `
-    <div data-v-a9660e98="" issuenumber="${period}" addtime="${formatTime}" rowid="1" class="hb">
+    <div data-v-a9660e98="" issuenumber='${period}' addtime='${formatTime}' rowid="1" class="hb">
         <div data-v-a9660e98="" class="item c-row">
             <div data-v-a9660e98="" class="result">
                 <div data-v-a9660e98="" class="select select-${(color)}">
@@ -278,8 +278,8 @@ const listOrderOld = async (req, res) => {
     if (typeid == 10) game = 'wingo10';
 
     const [wingo] = await connection.query(`SELECT * FROM wingo WHERE status != 0 AND game = '${game}' ORDER BY id DESC LIMIT ${pageno}, ${pageto} `);
-    const [wingoAll] = await connection.query(`SELECT * FROM wingo WHERE status != 0 AND game = '${game}' `);
-    const [period] = await connection.query("SELECT period FROM wingo WHERE status = 0 AND game = '"+ game+"' ORDER BY id DESC LIMIT 1 ");
+    const [wingoAll] = await connection.query(`SELECT * FROM wingo WHERE status != 0 AND game = '${game}' LIMIT 10 `);
+    const [period] = await connection.query(`SELECT period FROM wingo WHERE status = 0 AND game = '${game}' ORDER BY id DESC LIMIT 1 `);
     if (!wingo[0]) {
         return res.status(200).json({
             code: 0,
@@ -296,7 +296,10 @@ const listOrderOld = async (req, res) => {
             status: true
         });
     }
-    let page = Math.ceil(wingoAll.length / 10);
+    const [rowCount] = await connection.query(`SELECT COUNT(*) AS totalRows FROM wingo WHERE status != 0 AND game = '${game}'`);
+
+    let page = Math.floor(rowCount[0].totalRows / 10);
+
     return res.status(200).json({
         code: 0,
         msg: "Get success",
@@ -388,7 +391,7 @@ const addWinGo = async (game) => {
         if (game == 5) join = 'wingo5';
         if (game == 10) join = 'wingo10';
 
-        const [winGoNow] = await connection.query("SELECT period FROM wingo WHERE status = 0 AND game = '"+join+"' ORDER BY id DESC LIMIT 1 ");
+        const [winGoNow] = await connection.query(`SELECT period FROM wingo AS period WHERE status = 0 AND game = '${join}' ORDER BY id DESC LIMIT 1 `);
         const [setting] = await connection.query('SELECT * FROM `admin` ');
         let period = winGoNow[0].period; // cầu hiện tại
         let amount = Math.floor(Math.random() * 10); // xanh đỏ tím
@@ -456,43 +459,43 @@ const handlingWinGo1P = async (typeid) => {
     let result = Number(winGoNow[0].amount);
     switch (result) {
         case 0:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "0" AND bet != "t" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "0" AND bet != "t" `, []);
             break;
         case 1:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "1" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "1" `, []);
             break;
         case 2:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "2" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "2" `, []);
             break;
         case 3:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "3" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "3" `, []);
             break;
         case 4:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "4" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "4" `, []);
             break;
         case 5:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "5" AND bet != "t" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "5" AND bet != "t" `, []);
             break;
         case 6:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "6" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "6" `, []);
             break;
         case 7:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "7" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "7" `, []);
             break;
         case 8:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "8" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "d" AND bet != "8" `, []);
             break;
         case 9:
-            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "9" `, []);
+            await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet != "l" AND bet != "n" AND bet != "x" AND bet != "9" `, []);
             break;
         default:
             break;
     }
 
     if (result < 5) {
-        await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet = "l" `, []);
+        await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet = "l" `, []);
     } else {
-        await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = "${game}" AND bet = "n" `, []);
+        await connection.execute(`UPDATE minutes_1 SET status = 2 WHERE status = 0 AND game = '${game}' AND bet = "n" `, []);
     }
 
     // lấy ra danh sách đặt cược chưa xử lý

@@ -120,7 +120,7 @@ const totalJoin = async(req, res) => {
     const [rows] = await connection.query('SELECT * FROM users WHERE `token` = ? ', [auth]);
 
     if (rows.length > 0) {
-        const [wingoall] = await connection.query(`SELECT * FROM minutes_1 WHERE game = "${game}" AND status = 0 AND level = 0 ORDER BY id ASC `, [auth]);
+        const [wingoall] = await connection.query(`SELECT * FROM minutes_1 WHERE game = '${game}' AND status = 0 AND level = 0 ORDER BY id ASC `, [auth]);
         const [winGo1] = await connection.execute(`SELECT * FROM wingo WHERE status = 0 AND game = '${game}' ORDER BY id DESC LIMIT 1 `, []);
         const [winGo10] = await connection.execute(`SELECT * FROM wingo WHERE status != 0 AND game = '${game}' ORDER BY id DESC LIMIT 10 `, []);
         const [setting] = await connection.execute(`SELECT * FROM admin `, []);

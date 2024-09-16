@@ -6,8 +6,8 @@ $(window).on('load', function () {
     }, 100);
 })
 $(document).ready(function () {
-    $(`a[href="${window.location.pathname}"]`).addClass('active');
-    $(`a[href="${window.location.pathname}"]`).css('pointerEvents', 'none');
+    $(`a[href='${window.location.pathname}']`).addClass('active');
+    $(`a[href='${window.location.pathname}']`).css('pointerEvents', 'none');
 });
  
 $('.back-to-tops').click(function() {

@@ -117,7 +117,7 @@
         let html = '';
         params.map((data) => {
           html += `<tr class="text-center">
-                    <td id="${data.id}">
+                    <td id='${data.id}'>
                       ${data.id}
                     </td>
                     <td>
@@ -210,7 +210,7 @@ function renderPaginationNumbers() {
 
     for (let i = totalPages; i >= 1; i--) {
         const liClass = (i === currentPage) ? "page-item active" : "page-item";
-        $("#numbers").append(`<li class="${liClass}"><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`);
+        $("#numbers").append(`<li class='${liClass}'><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`);
     }
 }
 

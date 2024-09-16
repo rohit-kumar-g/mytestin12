@@ -124,7 +124,7 @@
       let html = '';
       params.map((data) => {
         html += `<tr class="text-center">
-                  <td id="${data.id}">
+                  <td id='${data.id}'>
                     ${data.id}
                   </td>
                   <td>
@@ -152,9 +152,9 @@
                     <span class="badge badge-${(data.status == 1) ? 'success' : 'danger'}">${(data.status == 1) ? 'Success' : 'Closed'}</span>
                   </td>
                   <!-- <td class="project-actions text-center" style="min-width: 160px;">
-                    <a class="btn btn-success btn-sm confirm-btn" href="" data="${data.id}"><i class="fa fa-check"></i></a>
+                    <a class="btn btn-success btn-sm confirm-btn" href="" data='${data.id}'><i class="fa fa-check"></i></a>
                     <!-- <a class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a> -->
-                    <a class="btn btn-danger btn-sm delete-btn" href="#" data="${data.id}"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-danger btn-sm delete-btn" href="#" data='${data.id}'><i class="fas fa-trash"></i></a>
                    </td> -->
                  </tr>`;
                })
@@ -240,7 +240,7 @@ function renderPaginationNumbers() {
 
     for (let i = totalPages; i >= 1; i--) {
         const liClass = (i === currentPage) ? "page-item active" : "page-item";
-        $("#numbers").append(`<li class="${liClass}"><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`);
+        $("#numbers").append(`<li class='${liClass}'><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`);
     }
 }
 

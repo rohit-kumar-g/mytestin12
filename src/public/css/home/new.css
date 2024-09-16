@@ -11,7 +11,9 @@
     justify-content: center;
     background-color: #9195a3
 }
-
+.lotterySlotItem h4[data-v-95fbb1e8] {
+    overflow: hidden;
+}
 #app {
     width: 10rem;
     height: -webkit-fit-content;
